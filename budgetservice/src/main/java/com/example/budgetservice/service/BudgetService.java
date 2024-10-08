@@ -1,9 +1,12 @@
 package com.example.budgetservice.service;
 
+import com.example.budgetservice.ExpenseDTO;
 import com.example.budgetservice.entity.Budget;
 import com.example.budgetservice.repository.BudgetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,8 +17,27 @@ public class BudgetService {
     @Autowired
     private BudgetRepository budgetRepository;
 
+    @Autowired
+    private RestTemplate restTemplate;
+
+
+
     public Budget createBudget(Budget budget) {
-        return budgetRepository.save(budget);
+
+        String expenseUrl = "http://localhost:8083/expense";
+        budget = budgetRepository.save(budget);
+
+        ExpenseDTO expenseDTO =  ExpenseDTO.builder().category(budget.getCategory()).amount(budget.getAmount()).build();
+
+        try {
+            // Send the notification request
+            restTemplate.postForObject(expenseUrl, expenseDTO, ExpenseDTO.class);
+        } catch (RestClientException e) {
+            // Handle error (logging, retry logic, etc.)
+            e.printStackTrace();
+            // Optionally, you can handle the situation, e.g., roll back the expense if needed
+        }
+        return budget;
     }
 
     public List<Budget> getAllBudgets() {
