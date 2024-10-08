@@ -21,3 +21,11 @@
 
 - http://localhost:8084/swagger-ui/index.html#/
 
+
+### Postman collection 
+
+- Find Postman collection from  `personal-finance-management/postman-collections`
+- Install desktop postman locally.
+- Import this collection in postman 
+
+

@@ -1,8 +1,9 @@
 package com.example.budgetservice.service;
 
-import com.example.budgetservice.ExpenseDTO;
+import com.example.budgetservice.dto.ExpenseDTO;
 import com.example.budgetservice.entity.Budget;
 import com.example.budgetservice.repository.BudgetRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
@@ -21,7 +22,7 @@ public class BudgetService {
     private RestTemplate restTemplate;
 
 
-
+    @Transactional
     public Budget createBudget(Budget budget) {
 
         String expenseUrl = "http://localhost:8083/expense";

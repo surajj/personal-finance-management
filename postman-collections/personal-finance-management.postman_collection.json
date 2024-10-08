@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "9d6f3bd6-9a1b-42ee-941b-60f28c559df4",
+		"name": "personal-finance-management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1938810"
+	},
+	"item": [
+		{
+			"name": "budget",
+			"item": [
+				{
+					"name": "Get-All-Budget",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/budgets",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"budgets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create-Budget",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"category\": \"CAR\",\r\n  \"amount\": 1000000,\r\n  \"remainingAmount\": 200000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/budgets",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"budgets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-Budget-By-Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/budgets/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"budgets",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update-Budget-By-Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\":1,\r\n  \"category\": \"CAR\",\r\n  \"amount\": 1000000,\r\n  \"remainingAmount\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/budgets/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"budgets",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete-Budget-By-Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\":1,\r\n  \"category\": \"CAR\",\r\n  \"amount\": 1000000,\r\n  \"remainingAmount\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/budgets/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"budgets",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "expense",
+			"item": [
+				{
+					"name": "Get-All-Expense",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/expense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"expense"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create-Expends",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"tata curve purchase\",\r\n  \"amount\": 1000000,\r\n  \"category\": \"Car\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/expense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"expense"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notifications",
+			"item": [
+				{
+					"name": "Get-All-Notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/notifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create-Notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"category\": \"Home\",\r\n  \"expenseDescription\": \"Home\",\r\n  \"expenseAmount\": 5000000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/notifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

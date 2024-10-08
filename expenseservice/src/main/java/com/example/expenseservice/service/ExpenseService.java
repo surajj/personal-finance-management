@@ -3,6 +3,7 @@ package com.example.expenseservice.service;
 import com.example.expenseservice.dto.NotificationDTO;
 import com.example.expenseservice.entity.Expense;
 import com.example.expenseservice.repository.ExpenseRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
@@ -19,6 +20,7 @@ public class ExpenseService {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Transactional
     public Expense addExpense(Expense expense) {
 
         Expense newExpense =  expenseRepository.save(expense);

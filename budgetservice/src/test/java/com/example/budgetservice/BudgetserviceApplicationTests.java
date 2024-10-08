@@ -1,5 +1,6 @@
 package com.example.budgetservice;
 
+import com.example.budgetservice.dto.ExpenseDTO;
 import com.example.budgetservice.service.BudgetService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

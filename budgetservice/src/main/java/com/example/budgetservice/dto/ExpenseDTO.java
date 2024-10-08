@@ -1,4 +1,4 @@
-package com.example.budgetservice;
+package com.example.budgetservice.dto;
 
 import lombok.*;
 
